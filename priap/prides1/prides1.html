@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Desafio 1</title>
+	<link rel="stylesheet" href="../../css/estilo.css">
+	<h3>Escreva uma função que verifique se o vetor de habilidades passado possui a habilidade "Javascript"
+e retorna um booleano true/false caso exista ou não.
+	</h3>
+</head>
+<body>
+<button onclick="end();">Executar</button>
+<p id=texto> </p>
+<body>
+	 <a class="retorno" href="./priap.html">Voltar</a>
+</body>
+<script>
+function end()
+{
+	var endereco = 
+	{ 
+	 	rua: "Rua dos pinheiros", 
+	 	numero: 1293, 
+	 	bairro: "Centro", 
+		cidade: "São Paulo", 
+		uf: "SP"
+	};
+	var texto= "O usuário mora em " + endereco.cidade + " / " + endereco.uf + ", No bairro " + endereco.bairro + " na rua " + endereco.rua + " com nº " + endereco.numero;
+	document.getElementById("texto").innerHTML = texto;
+	return 0;
+	}
+</script>
+</html>
