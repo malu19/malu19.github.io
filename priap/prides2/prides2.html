@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Desafio 3</title>
+	<link rel="stylesheet" href="../../css/estilo.css">
+	<h1>Crie uma função que dado um intervalo (entre x e y) exiba todos número pares:
+	</h1>
+</head>
+<script>
+function ip()
+{
+	var a = document.getElementById("ent1").value;
+	var b = document.getElementById("ent2").value;
+	var c= 0;
+	var d= 0;
+	var e ="Os números pares são: "
+	if(a<b)
+	{
+		c = a;
+		d = b;
+	}
+
+	else
+	{
+		d = a;
+		c = b;
+	}
+		
+	for(c;c<=d;c++)
+	{
+		if(c%2==0)
+		e+= c+ ",";
+	}
+	
+	document.getElementById("e").innerHTML = e;
+}
+
+</script>
+<body>
+<a>Descubra os números pares do intervalo desejado:</a>
+<input type="num" id="ent1">
+<input type="num" id="ent2">
+<button onclick="ip();">Executar</button>
+<p id=e> </p>
+<a class="retorno" href="./priap.html">Voltar</a>
+</body>
