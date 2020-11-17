@@ -8,26 +8,43 @@
 <body>
 	<h3>Dado o vetor de objetos, escreva uma função que produza o seguinte resultado: O Diego possui as habilidades: Javascript, ReactJS, Redux e O Gabriel possui as habilidades: VueJS, Ruby on Rails, Elixir. (ver o console)
 	</h3>
+	<p id=msg1> </p>	
+	<p id=msg2> </p>	
+	<button onclick="usuarios();">Executar</button>
 	 <a class="retorno" href="./priap.html">Voltar</a>
 </body>
 <script> 
-	var usuarios = [
-		{
-			nome: "Diego",
-			habilidades: ["Javascrip", "ReactJS", "Redux"]
-		},
-		{
-			nome: "Gabriel",
-			habilidades: ["VueJS", "Ron Rails", "Elixir"]
-		}
-	];
-	
-function exibirhab(usuarios)
-	{
-		for(let hab of usuarios)
-		{
-			console.log("O "+hab.nome + "possui as habilidades: " + hab.habilidades.join());
-		}                
-	}
+function usuarios()
+{
+var usuarios = 
+[
+    {
+        nome: "Diego",
+        habilidades: ["Javascript", "ReactJS", "Redux"]
+    },
+    {
+        nome: "Gabriel",
+        habilidades: ["VueJS", "Ruby on Rails", "Elixir"]
+    }
+];
+
+    var d = 
+    {
+        nome: "",
+        hab: [""]
+    };
+    var g = 
+    {
+        nome: "",
+        hab: [""]
+    };
+    d=usuarios[0];
+    g=usuarios[1];
+	var dtext="O " + d.nome + " possui as habilidades: " + d.hab;
+	var gtext = " O " + g.nome + " possui as habilidades: " + g.habilidades + ".";
+	document.getElementById("msg1").innerHTML = dtext;
+	document.getElementById("msg2").innerHTML = gtext;
+}
+
 </script>
 </html>
