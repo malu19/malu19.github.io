@@ -5,13 +5,11 @@ a{
 }
 h2 {
 	font-family: 'Optima', serif;
-	font-size : 20px;
 	color: rgb(0,100,0);	
 	text-align: center;
 }	
 h1,h3{
 	font-family: 'Optima', serif;
-	font-size : 25px;
 	color: rgb(0,100,0);
 }
 .button {
