@@ -7,24 +7,19 @@
             <link rel="stylesheet" href="../../css/estilo.css">
         </head>
     <body>
-        <h2>Transformar de massa para mol (Ferro)</h2>
-        <form>
-            <input type="text" id="massa" placeholder="Gramas">
-            <br>
-            <br>
-            <button type="button" id="botao1"> Calcular </button>
-            <p id="resultado"></p>
-        </form>
-        <h2>Transformar de mol para massa (Ferro)</h2>
-        <form>    
-            <input type="text" id="mol" placeholder="Mol">
-            <br>
-            <br>
-            <button type="button" id="botao2"> Calcular </button>
-            <p id="resultado2"></p>
-        </form>
-        
+
+        <h2>Converta grama em mol (Ferro)</h2>
+        <input type="number" id="massa" placeholder="Gramas" />
+        <br></br>
+        <button onclick="converte1();">Converter</button>
+        <h3 id="grama"></h3>
+        <br></br>
+        <h2>Converta mol em grama (Ferro)</h2>
+        <input type="number" id="mols" placeholder="Mol" />
+        <br></br>
+        <button onclick="converte2();">Converter</button>
+        <h3 id="mol"></h3>
         <li><a href="./index.html">Voltar</a></li>
-        <script src="./sims.js"></script>
+        <script src="./sims.js"> </script>
     </body>
 </html>
