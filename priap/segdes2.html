@@ -1,0 +1,35 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf8">
+<link rel="stylesheet" href="../../css/estilo.css">
+</head>
+<body>
+
+<h1>Desafio 2</h1>
+<button onclick="q();">Criar quadrados</button>	
+<br>
+<div id= 'teste'>
+</div>
+<script>
+function quadrado()
+{
+	var q = document.createElement('div');
+	q.style.width = '100px';
+	q.style.height = '100px';
+	q.style.backgroundColor = '#FF0000';
+	q.style.marginBottom = '1px'
+	q.style.display = 'inline-block';
+	var resultado = document.getElementById('teste');
+	q.onmouseover = function() {
+        q.style.backgroundColor = getRandomColor();
+      } 
+	resultado.appendChild(q);
+}
+</script>
+	<footer>
+		<a class="retorno" href="./priap.html">Voltar</a>
+	</footer>
+</body>
+</html>
