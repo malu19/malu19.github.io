@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt">
+<meta charset="UTF-8">
+<head>
+    <script>
+        function primo() 
+		{
+            var n = document.getElementById("n").value;
+			var texto ="";
+			var x = 0;
+			if(n==1)
+				{
+					texto = "O número " + n + " não é primo";
+					document.getElementById("texto").innerHTML = texto;
+					return false;					
+				}
+				else
+					if (n > 1) 
+					{
+						var i;
+						for (i = 1; i <= n; i++) {
+							if (n % i == 0) x++;
+						}
+						if (x == 2) {
+							texto = "O número " + n + " é primo";
+							document.getElementById("texto").innerHTML = texto;
+							return true;
+						}
+
+						if (x > 2) {
+							texto = "O número " + n + " não é primo";
+							document.getElementById("texto").innerHTML = texto;
+							return false;
+						}
+					}	
+
+					else 
+					{
+						texto = "O número não pode ser 0 ou negativo!";
+						document.getElementById("texto").innerHTML = texto;
+						return false;
+					}
+        }
+    </script>
+</head>
+<body>
+    <input type="number" id="n">
+    <button onclick="javascript:primo()"> Veja se é primo </button>
+	<h3 id="texto"></h3>
+</body>
+</html>
