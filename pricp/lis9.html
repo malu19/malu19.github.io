@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt">
+<meta charset="UTF-8">
+<head>
+    <script>
+        function soma() 
+		{
+            var n1 = document.getElementById("n1").value;
+            var n2 = document.getElementById("n2").value;
+			var n3 = document.getElementById("n3").value;
+           var r= (n1*2+n2*3+n3*5)/10;
+		   document.getElementById("r").innerHTML = r;
+		   return r;
+        }
+    </script>
+</head>
+<body>
+	<h3>Insira a primeria nota:</h3>
+    <input type="number" id="n1">
+	<h3>Insira a segunda nota:</h3>
+    <input type="number" id="n2" />
+	<h3>Insira a terceira nota:</h3>
+    <input type="number" id="n3" />
+	<br>
+    <button onclick="javascript:soma()"> Calcule sua média final </button>
+	<h3 id="r"></h3>
+</body>
+</html>
