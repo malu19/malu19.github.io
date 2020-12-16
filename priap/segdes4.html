@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html>
 <head>
@@ -6,16 +5,15 @@
 <link rel="stylesheet" href="../../css/estilo.css">
 </head>
 <body>
-
 <h1>Desafio 4</h1>
 <input type="text" name="nome" id='text'>
 <button onclick="add()">Adicionar</button>
-
 <ul id='n'></ul>
 <script>
+var names_array = ["Diego", "Gabriel", "Lucas"];
 function add ()
 {
-	var elemento_quarto = document.getElementById('n');
+	var add = document.getElementById('n');
 	var val = document.getElementById('text').value;
 	for (i of nomes_array) 
 	{
@@ -23,16 +21,16 @@ function add ()
       var texto = document.createTextNode(i);
 
 	  coli.appendChild(texto);
-	  elemento_quarto.appendChild(coli);
+	  add.appendChild(coli);
 	}
 
 	var coli = document.createElement('li');
 	var texto = document.createTextNode(val);
 
 	coli.appendChild(texto);
-	elemento_quarto.appendChild(coli);
+	add.appendChild(coli);
 
-nomes_array.splice(0,3);
+names_array.splice(0,3);
 }
 </script>
 	<footer>
