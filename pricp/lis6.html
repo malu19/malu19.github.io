@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt">
+<meta charset="UTF-8">
+<head>
+    <script>
+        function soma() 
+		{
+            var cf = document.getElementById("cf").value;
+           var i= 0.45*cf+parseFloat(cf);
+		   /*coloquei a porcetagem da distribuidora em cima do custo de fábrica já com os impostos, porque não entendi se ambas as porcetagens deveriam ser aplicadas ao custo de fábrica, ou se apenas a dos impostos.*/
+		   var r= 0.28*i+parseFloat(i);
+		   document.getElementById("r").innerHTML = r;
+		   return r;
+        }
+    </script>
+</head>
+<body>
+	<h3>Insira o custo de fábrica:</h3>
+    <input type="number" id="cf">
+    <button onclick="javascript:soma()"> Calcular custo final </button>
+	<h3 id="r"></h3>
+</body>
+</html>
