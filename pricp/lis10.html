@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt">
+<meta charset="UTF-8">
+<head>
+    <script>
+        function soma() 
+		{
+            var n1 = document.getElementById("n1").value;
+			var r;
+			if(n1<12)
+				r=n1*1.30;
+			else
+				r=n1;
+		   document.getElementById("r").innerHTML = r;
+		   return r;
+        }
+    </script>
+</head>
+<body>
+	<h3>Insira o número de maçãs compradas:</h3>
+    <input type="number" id="n1">
+	<br>
+    <button onclick="javascript:soma()"> Calcular valor final </button>
+	<h3 id="r"></h3>
+</body>
+</html>
