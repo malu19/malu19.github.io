@@ -9,18 +9,24 @@
 	<h1>Escreva uma função que verifique se o vetor de habilidades passado possui a habilidade "Javascript"
 e retorna um booleano true/false caso exista ou não. (ver o console)
 	</h1>
+	<button onclick="temHabilidade();">Executar</button>
 	 <a class="retorno" href="../priap.html">Voltar</a>
 </body>
 <script>
-	function temHabilidade(skills) 
+	function temHabilidade()
+{
+	var temHabilidade = ["Javascript", "ReactJS", "React Native"];
+	if(temHabilidade.indexOf("Javascript") == -1)
 	{
-		var a = skills.indexOf("Javascript", [0]);
-			if (a==0)
-			return true;
-			else
-			return false;
+		alert("não encontrado");
+		return 0;
 	}
-	var skills = ["Javascript", "ReactJS", "React Native"];
-	console.log(temHabilidade(skills));
+	else{
+		x = 1;	
+		alert(" Javascript está no array ");
+		return 1;
+	}
+}
+	var temHabilidade = ["Javascript", "ReactJS", "React Native"];
 </script>
 </html>
