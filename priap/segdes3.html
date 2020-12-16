@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html>
 <head>
@@ -6,29 +5,29 @@
 <link rel="stylesheet" href="../../css/estilo.css">
 </head>
 <body>
-
 <h1> Desafio 3</h1>
-<button onclick="nome();">Executar</button>
-<ul id="n">
+<button onclick="des3();">Executar</button>
+<ul id="teste2">
 </ul>
-<script>
- function nome ()
+function des3 ()
 {
-	var nomes = ["Diego", "Gabriel", "Lucas"];
+	var names = ["Diego", "Gabriel", "Lucas"];
     var elemento = document.createElement('ul');
 	elemento.style.display = 'inline-block';
-	for (i of nomes)
+	for (i of names)
 	{
       var coli = document.createElement('li');
       var texto = document.createTextNode(i);
-      acrescentarli.appendChild(texto);
+
+      coli.appendChild(texto);
       elemento.appendChild(coli);
 	}
-	var result = document.getElementById('n');
-	result.appendChild(elemento);
+
+	var resultado = document.getElementById('teste2');
+	resultado.appendChild(elemento);
+
+
 }
-	var nomes_array = ["Diego", "Gabriel", "Lucas"];
-</script>
 	<footer>
 		<a class="retorno" href="./priap.html">Voltar</a>
 	</footer>
