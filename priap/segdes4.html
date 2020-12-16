@@ -1,0 +1,42 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf8">
+<link rel="stylesheet" href="../../css/estilo.css">
+</head>
+<body>
+
+<h1>Desafio 4</h1>
+<input type="text" name="nome" id='text'>
+<button onclick="add()">Adicionar</button>
+
+<ul id='n'></ul>
+<script>
+function add ()
+{
+	var elemento_quarto = document.getElementById('n');
+	var val = document.getElementById('text').value;
+	for (i of nomes_array) 
+	{
+      var coli = document.createElement('li');
+      var texto = document.createTextNode(i);
+
+	  coli.appendChild(texto);
+	  elemento_quarto.appendChild(coli);
+	}
+
+	var coli = document.createElement('li');
+	var texto = document.createTextNode(val);
+
+	coli.appendChild(texto);
+	elemento_quarto.appendChild(coli);
+
+nomes_array.splice(0,3);
+}
+</script>
+	<footer>
+		<a class="retorno" href="./priap.html">Voltar</a>
+	</footer>
+</body>
+</html>
