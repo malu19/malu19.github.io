@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt">
+<meta charset="UTF-8">
+<head>
+    <script>
+        function mm() 
+		{
+            var n1=document.getElementById("n1").value;
+            var n2=document.getElementById("n2").value;
+			var texto="";
+			if(n1>n2)
+			{
+				texto=n1+" é maior do que "+n2;
+				document.getElementById("texto").innerHTML = texto;
+			}
+				else
+					if(n1<n2)
+						{
+							texto =n2+" é maior do que "+n1;
+							document.getElementById("texto").innerHTML = texto;
+						}
+						else
+							{
+								texto=n1+" é igual a "+n2;
+								document.getElementById("texto").innerHTML = texto;
+							}
+        }
+    </script>
+</head>
+<body>
+    <input type="number" id="n1">
+    <input type="number" id="n2" />
+    <button onclick="javascript:mm()"> Descubra qual é o maior </button>
+	<h3 id="texto"></h3>
+</body>
+</html>
