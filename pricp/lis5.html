@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt">
+<meta charset="UTF-8">
+<head>
+    <script>
+        function soma() 
+		{
+            var n1 = document.getElementById("n1").value;
+            var n2 = document.getElementById("n2").value;
+           var r= n2/100*n1+parseFloat(n1);
+		   document.getElementById("r").innerHTML = r;
+		   return r;
+        }
+    </script>
+</head>
+<body>
+	<h3>Insira seu salário:</h3>
+    <input type="number" id="n1">
+	<h3>Insira o percentual de reajuste:</h3>
+    <input type="number" id="n2" />
+	<br>
+    <button onclick="javascript:soma()"> Veja seu novo sálario </button>
+	<h3 id="r"></h3>
+</body>
+</html>
