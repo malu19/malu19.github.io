@@ -7,24 +7,25 @@
 </head>
 <body>
 	<h1>Escreva uma função que dado um total de anos de estudo retorna o quão experiente o usuário é: (ver o console)</h1>
-	 <a class="retorno" href="../priap.html">Voltar</a>
+	<input type="number" id="usuario" placeholder="Anos de estudo:">
+	<button onclick="experiente();">Executar</button>
+	<a class="retorno" href="../priap.html">Voltar</a>
 </body>
 <script>
-	function experiencia(anos) 
-	{
-		if (anos>=0 && anos<1)
-			return "Iniciante";
-		else 
-			if (anos>=1 && anos<3)
-				return "Intermediário";
-			else
-				if (anos>=3 && anos<=6)
-					return "Avançado";
-			else
-					return "Jedi Master";
-		
-	}
-	var anos= 7;
-	console.log(experiencia(anos));
+function experiente()
+{
+	var a = document.getElementById("usuario").value;
+	a = parseInt(a);
+	if(a>=0 && a<2)
+		alert ("Iniciante");
+	else if(a>1 && a<=3)
+		alert ("Intermediário");
+	else if(a>3 && a<=6)
+		alert ("Avançado");	
+	else if(a=7)
+		alert ("Jedi master");
+	else if(a<0)
+		alert ("Número inválido");
+}
 </script>
 </html>
