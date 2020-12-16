@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <script>
+        function hip() 
+		{
+            var n1 = document.getElementById("n1").value;
+            var n2 = document.getElementById("n2").value;
+			var h = Math.sqrt(n1*n1+n2*n2);
+			document.getElementById("texto").innerHTML = h;
+        }
+    </script>
+</head>
+<body>
+    <input type="number" id="n1">
+    <input type="number" id="n2" />
+    <button onclick="javascript:hip()"> Calcular hipotenusa </button>
+	<h3 id="texto"></h3>
+</body>
+</html>
