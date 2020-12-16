@@ -1,0 +1,35 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf8">
+<link rel="stylesheet" href="../../css/estilo.css">
+</head>
+<body>
+
+<h1> Desafio 3</h1>
+<button onclick="nome();">Executar</button>
+<ul id="n">
+</ul>
+<script>
+ function nome ()
+{
+	var nomes = ["Diego", "Gabriel", "Lucas"];
+    var elemento = document.createElement('ul');
+	elemento.style.display = 'inline-block';
+	for (i of nomes)
+	{
+      var coli = document.createElement('li');
+      var texto = document.createTextNode(i);
+      acrescentarli.appendChild(texto);
+      elemento.appendChild(coli);
+	}
+	var result = document.getElementById('n');
+	result.appendChild(elemento);
+}
+</script>
+	<footer>
+		<a class="retorno" href="./priap.html">Voltar</a>
+	</footer>
+</body>
+</html>
