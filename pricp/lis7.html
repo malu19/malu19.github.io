@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt">
+<meta charset="UTF-8">
+<head>
+    <script>
+        function soma() 
+		{
+            var cv = document.getElementById("cv").value;
+            var valt = document.getElementById("valt").value;
+			var sf = document.getElementById("sf").value;
+			var vc = document.getElementById("vc").value;
+           var com = vc*cv;
+		   var por = 0.05*valt;
+		   var r = parseFloat(com)+parseFloat(por)+parseFloat(sf);
+		   document.getElementById("r").innerHTML = r;
+		   return r;
+        }
+    </script>
+</head>
+<body>
+	<h3>Insira o número de carros vendidos:</h3>
+    <input type="number" id="cv">
+	<h3>Insira o valor total das vendas:</h3>
+    <input type="number" id="valt" />
+	<h3>Insira seu salário fixo:</h3>
+    <input type="number" id="sf" />
+	<h3>Insira o valor recebido por carro vendido:</h3>
+    <input type="number" id="vc" />
+	<br>
+    <button onclick="javascript:soma()"> Veja seu sálario final</button>
+	<h3 id="r"></h3>
+</body>
+</html>
