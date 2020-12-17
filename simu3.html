@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf8">
+ <link rel="stylesheet" href="../../css/estilo.css">
+<title>Simulação 3</title>
+</head>
+<body>
+<h1>Simulação 3</h1>
+<p> Esta simulação deve ser capaz de fazer correlações entre o reagente limitante de uma reação e a formação de um produto. Para tal, consideramos a reação desproporcional entre os reagentes de uma reação. Desta forma, a programação deve permitir que o usuário insira quantidades aleatórias de reagentes, e sejam fornecidas a ele as seguintes informações: qual o reagente limitante, qual a quantidade do reagente limitante e qual a quantidade de produto formada.</p>
+<input id="hidro" placeholder="digite o valor do mol do H2"><br>
+<input id="oxigen" placeholder="digite o valor do mol do O2"><br>
+<button onclick="descobre_reagenLimi();">Calcular</button>
+<p id="conclusao"></p>
+<script>
+   function descobre_reagenLimi(){
+   	var hid = document.getElementById("hidro").value;
+    hid= parseFloat(hid.replace(',','.'));
+   	var o2 = document.getElementById("oxigen").value;
+    o2= parseFloat(o2.replace(',','.'));
+    if(hid>o2*2){
+   		var resul="Nesse caso, o reagente limitante é o O2, e tem a seguinte quantidade: "+ o2 +" mol's.Já a quantidade de produto formado é: " + o2 + "mol's de H20";
+       }
+       else{
+             if(o2>hid/2){
+                var resul="Nesse caso, o reagente limitante é o H2, e ele tem a seguinte quatidade:"+hid+"mol's. Já a quantidade de produto formado é:"+hid+"mol's de H2O";
+             }
+             else{
+                 var resul="Nesse caso, não existe reagente em excesso.E a quantidade de produto formado é:"+hid+"mol's de H20";
+             }
+            }
+    document.getElementById("conclusao").innerHTML=resul;
+    }
+</script>
+       <li><a href="./index.html">Voltar</a></li>
+</body>
+</html>
