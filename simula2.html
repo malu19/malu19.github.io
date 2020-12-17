@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf8">
+<link rel="stylesheet" href="../../css/estilo.css">
+<script src="sim2.js"></script>
+</head>
+<body>
+
+<h1 class="centro"> Simulação 2 </h1>
+<h3> Insira o valor (do primeiro reagente), o primeiro e o segundo reagente e descubra a massa de H2O ou o volume de H2 nas correlações específicas.</h3>
+<p>H2l - H2Og , O2g - H2l</p>
+<br>
+<div class="margem"> 
+	<input id = "valor" 
+		type="number" 
+		id="valor"
+		placeholder="valor"
+	>
+		<select name = "reagente" id='reagente' >
+			<option value="O2"> O2 </option>
+			<option value="H2"> H2 </option>
+		</select>
+
+		<select name = "reagente2" id='reagente2' >
+			<option value="H2">H2</option>
+			<option value="H2O"> H2O </option>
+		</select>
+		<button onclick="h2o();">Executar</button>
+		<p id="conta"></p>
+	<p> Feito por Larissa Schumacker e Maria Luiza Jiquiriçá</p>
+		<footer>
+            <li><a href="./index.html">Voltar</a></li>
+		</footer>
+</div>
+</body>
+</html>
