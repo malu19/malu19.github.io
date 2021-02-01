@@ -12,6 +12,11 @@ h1,h2,h3{
 	font-family: 'Optima', serif;
 	color: rgb(0,100,0);
 }
+p{
+	font-family: 'Optima', serif;
+	font-size : 20px;
+	color: rgb(0,100,0);	
+}
 .button {
     background-color: rgb(224,255,255);
     padding: 2px 2px;
