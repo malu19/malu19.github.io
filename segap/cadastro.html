@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cadastro de Livros</title>
+	<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="cadastro.css" media="screen" />
+	<script>
+		$(function () {
+			var acervo=new Array();
+			$("#botao").click(function () {
+				let titlivro=$("#tit").val();
+				let deslivro=$("#des").val();
+				let genlivro=$("#gen").val();
+				let autlivro=$("#aut").val();
+				$("#acervo").append($("<tr>").addClass("livro")
+					.append($("<td>").text(titlivro)).addClass("tit")
+					.append($("<td>").text(deslivro)).addClass("des")
+					.append($("<td>").text(genlivro)).addClass("gen")
+					.append($("<td>").text(autlivro)).addClass("aut")
+					.append($("<td>").append($("<img>").attr('src', 'lixeira.png'))));
+				$("#tit").val("");
+				$("#des").val("");
+				$("#gen").val("");
+				$("#aut").val("");
+			})
+			$("input[name=salvar]").click(function () {
+				$('.livro').each(function (idx, obj) {
+					let tit=$(obj).children("td:nth-child(1)").text();
+					let des=$(obj).children("td:nth-child(2)").text();
+					let gen=$(obj).children("td:nth-child(3)").text();
+					let aut=$(obj).children("td:nth-child(4)").text();
+					var livro={
+						"tit":tit, "des":des,"gen":gen, "aut":aut};
+					acervo.push(livro);
+					$("input[name=acervo_post]").val(JSON.stringify(acervo));
+					console.log(acervo);
+				});
+			});
+			$("#acervo").on("click","img",function () {$(this).parents("#acervo tr").remove();})
+			$("#apagar").click(function () {$("#acervo").empty();})
+		})
+	</script>
+</head>
+<body>
+	<fieldset>
+		<legend><h1>Cadastro de Livros</h1></legend>
+		<input type="search" id="tit" list="historico" placeholder="Título"><br><br>
+		<datalist id="historico">
+			<option value="Jorge Amado"></option>
+		</datalist>
+		<textarea id="des" placeholder="Descrição"></textarea><br><br>
+		<select id="gen">
+			<option value="Romance">Romance</option>
+			<option value="Drama">Drama</option>
+			<option value="Terror">Terror</option>
+			<option value="Ficção">Ficção</option>
+			<option value="Técnico">Técnico</option>
+		</select>
+		<br><br>
+		<input type="search" id="aut" name="aut" placeholder="Autor" autocomplete="on" />
+		<br><br>
+		<button id="botao">Cadastrar</button>
+	</fieldset>
+	<h1>Catálogo</h1>
+	<table id="acervo">
+		<tr>
+			<th>Título</th>
+			<th>Descrição</th>
+			<th>Gênero</th>
+			<th>Autor</th>
+		</tr>
+	</table>
+	<br>
+	<br>
+	<form action="https://rafaelescalfoni.net/web/livros.php" method="post">
+		<input type="hidden" name="acervo_post">
+		<input type="submit" value="Salvar no BD" name="salvar">
+	</form>
+</body>
+</html>
