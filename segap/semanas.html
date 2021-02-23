@@ -25,7 +25,7 @@
                     const b = new Date(ano2, mes2 - 1, dia2);
                     const c = Math.abs(a.getTime() - b.getTime());
                     const d = Math.ceil(c / (1000 * 60 * 60 * 24 * 7));
-                    $("#texto").text("Há " + d + "semanas " + "entre " + dia + "/" + mes + "/" + ano + " e " + dia2 + "/" + mes2 + "/" + ano2)
+                    $("#texto").text("Há " + d + " semanas " + "entre " + dia + "/" + mes + "/" + ano + " e " + dia2 + "/" + mes2 + "/" + ano2)
                     $("#tx").val("");
                     $("#tx2").val("");
                 }
