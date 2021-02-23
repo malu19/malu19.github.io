@@ -14,7 +14,7 @@
                     let ano = texto.substr(0, 4);
                     let mes = texto.substr(5, 2);
                     const hoje= new Date();
-                    const nasc= new Date(a1, m1 - 1, d1);
+                    const nasc= new Date(ano, mes - 1, dia);
                     const result = Math.abs(hoje.getTime() - nasc.getTime());
                     const dias = Math.ceil(result / (1000 * 60 * 60 * 24));
                     $("#texto1").text("Você viveu, até hoje " + dias + " dias");
@@ -27,7 +27,7 @@
 <body>
     <h2>6 - Faça um programa que leia uma data de nascimento e retorne quantos dias de vida a pessoa tem.</h2>
     <input type="date" id="texto">
-    <button id="data">enviar</button>
+    <button id="data">Ver quantos dias você viveu até hoje</button>
     <p id="texto1"></p>
     <br><br>
     <footer>
