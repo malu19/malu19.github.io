@@ -1,0 +1,40 @@
+ <!DOCTYPE html>
+<html>
+<head>
+	<title>Dias vividos</title>
+	<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/estilo.css" media="screen"/>
+ <script>
+        $(function () {
+            $("#data").click(function () 
+            {
+                let texto= $("#texto").val();
+                if (texto!= "") 
+                {
+                    let dia= texto.substr(8, 2);
+                    let ano= texto.substr(0, 4);
+                    let mes= texto.substr(5, 2);
+                    const vida= new Date();
+                    const nasc= new Date(ano, mes - 1, dia);
+                    const x = Math.abs(dias.getTime() - nasc.getTime());
+                    const y = Math.ceil(x / (1000 * 60 * 60 * 24));
+                    $("#texto1").text("Você viveu, até agora" + y + " dias");
+                    $("#frase").val("");
+                }
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <h2>6 - Faça um programa que leia uma data de nascimento e retorne quantos dias de vida a pessoa tem</h2>
+    <input type="date" id="texto">
+    <button id="data">enviar</button>
+    <p id="texto1"></p>
+    <br>
+    <footer>
+        <a class="retorno" href="./segap.html">Voltar</a>
+    </footer>
+</body>
+</html>
