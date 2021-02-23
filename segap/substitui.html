@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Substitui</title>
+	<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/estilo.css" media="screen"/>
+<script>
+    var min=/[a-z]/;
+    var mai=/[A-Z]/;
+    var num=/[1-9]/;
+    var especiais=/[@#!$%&*()-+.,=]/;
+    $(function () {
+        $("#dados").click(function () 
+        {
+            if ($("#texto").val() != "") {
+                let procura=$("#frase").val();
+                let substitui=$("#frase2").val();
+                let texto = $("#texto").val();
+                let array=texto.split(" ");
+                for (i = 0; i < array.length; i++) {
+                    if (array[i] == procura) {
+                        array[i] = substitui;
+                    }
+                }
+                let test = ""
+                test = array.join(" ");
+                $("#texto1").text(test);
+                $("#frase").val("");
+                $("#frase2").val("");
+                $("#texto").val("");
+            }
+
+            else {
+                $("#texto1").text("Digite um texto válido");
+            }
+        })
+    })
+</script>
+</head>
+<body>
+<h2>5 - Faça um programa que implemente a funcionalidade substituir em textos, ou seja, terá um campo "procurar" e um campo "substituir". Ao executar, seu programa deverá procurar as ocorrências no texto do valor digitado em "procurar" e trocar pelo valor digitado em "substituir".</h2>
+<input type="text" id="texto" placeholder="Texto" class="maior">
+<input type="text" id="frase" placeholder="Procurar palavra">
+<input type="text" id="frase2" placeholder="Substituir palavra">
+<button id="dados">enviar</button>
+<p id="texto1"></p>
+<br><br>
+<footer>
+    <a class="retorno" href="./segap.html">Voltar</a>
+</footer>
+</body>
+</html>
