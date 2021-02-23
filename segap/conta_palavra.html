@@ -6,13 +6,15 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="../css/estilo.css" media="screen"/>
 <script>
-    function ocorrencia(obj, pal) {
+    function ocorrencia(obj, pal) 
+{
         return obj.filter((v) => (v===pal)).length;
     }
-    $(function () {
+    $(function () 
+      {
         $("#limpar").click(function () {
             $("#tabela").empty();
-            $("#frase").val("");
+            $("#texto").val("");
         })
 
         $("#array").click(function () {
@@ -52,7 +54,7 @@
 <body>
 <h2>3 - Faça um programa que leia um texto e separe todas as palavras em um array, indicado para cada uma delas o número
     de vezes que aparece no texto. Imprima o array em uma tabela contendo a palavra e número de ocorrências.</h2>
-<input type="text" id="frase">
+<input type="text" id="texto">
 <button id="array">Ver ocorrências da palavra.</button>
 <p id="texto1"></p>
 <table id="tabela"></table>
