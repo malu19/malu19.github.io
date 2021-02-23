@@ -17,7 +17,7 @@
                     const nasc= new Date(ano, mes - 1, dia);
                     const result = Math.abs(hoje.getTime() - nasc.getTime());
                     const dias = Math.ceil(result / (1000 * 60 * 60 * 24));
-                    $("#texto1").text("Você viveu, até hoje " + dias + " dias");
+                    $("#texto1").text("Você viveu, até hoje, " + dias + " dias");
                     $("#texto").val("");
                 }
             })
