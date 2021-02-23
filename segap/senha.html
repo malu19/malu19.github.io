@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vogais</title>
+	<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/estilo.css" media="screen"/>
+<script>
+        var min=/[a-z]/;
+        var mai=/[A-Z]/;
+        var num=/[1-9]/;
+        var especiais=/[@#!$%&*()-+.,=]/;
+        $(function () {
+
+            $("#texto").keyup(function () {
+                if ($("#texto").val() == "") {
+                    $("#tx").text("");
+                    $("#tx2").css('color', 'black');
+                }
+            })
+
+            $("#senha").click(function () {
+                let texto= $("#texto").val();
+                let resultado="";
+                if ($("#texto").val() == "") {
+                    $("#tx").text("Insira uma senha");
+                    $("#tx2").css('color', 'black');
+                }
+                if (min.test(texto) || mai.test(texto)) {
+                    $("#tx").text("Senha fraca");
+                    $("#tx2").css('color', 'red');
+                }
+                if (min.test(texto) && mai.test(tetxo) && num.test(texto)) {
+                    $("#tx").text("Senha média");
+                    $("#tx2").css('color', 'orange');
+                }
+
+                if (min.test(texto) && mai.test(texto) && num.test(texto) && especiais.test(texto)) {
+                    $("#tx").text("Senha forte");
+                    $("#tx2").css('color', 'green');
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+    <h2>9 - Faça uma caixa de texto que classifique:
+        - fraca (em vermelho) se só possuir letras minúsculas ou maiúsculas
+        - moderada (em laranja) se possuir letras minúsculas e maiúsculas e números
+        - forte (em verde) se possuir letras minúsculas e maiúsculas, números e caracteres especiais (@, #, !, $, %, &, *, (, ), -, +, ., =)</h2>
+    <input type="password" id="frase">
+    <button id="senha">Verificar nível de senha.</button>
+    <p id="tx"></p>
+    <br><br>
+    <footer>
+        <a class="retorno" href="./segap.html">Voltar</a>
+    </footer>
+</body>
+</html>
