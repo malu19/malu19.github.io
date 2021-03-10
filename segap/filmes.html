@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Catálogo de filmes</title>
+	<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/filmes.css" media="screen"/>
+    <h1>Catálogo</h1> </head> <script >
+        $(function()
+        {             
+            let code=$("#cep").val();
+            let url = "https://rafaelescalfoni.github.io/desenv_web/filmes.json";
+            $.get(url, function(filme)
+            {
+                preenche(filme);
+            });       
+            var claA =  function (num)
+            {
+                let y;
+                if(num== 18)
+                    y = "<img src='./18.png' style='width:20% height:20%; float:right;'>" ;
+                if(num == 16)
+                    y = "<img src='./imagem/16.png' style='width:20% height:20%; float:right;'>" ;
+                if(num== 14)
+                    y = "<img src='./imagem/14.png' style='width:20% height:20%; float:right;'>" ;
+                if(num == 12)
+                    y = "<img src='./imagem/12.png' style='width:20% height:20%; float:right;'>" ;
+                if(num == 10)
+                    y = "<img src='./imagem/10.png' style='width:20% height:20%; float:right;'>" ;
+                if(num == 0)
+                    y = "<img src='./imagem/livre.png' style='width:20% height:20%; float:right;'>" ;
+                return y;
+            }
+         var fp =  function (filme)
+         {       
+            var seleciona = filme.map(function(value)
+        {
+            let y;
+            if(value == 1)
+                y = "<img src='https://rafaelescalfoni.github.io//desenv_web//img//betterCallSaul.jpg' style='width:30%;'";
+            if(value == 2)
+                y = "<img src='https://rafaelescalfoni.github.io//desenv_web//img//breakingBad.png' style='width:30%;'>";
+            if(value == 3)
+                y = "<img src='https://rafaelescalfoni.github.io//desenv_web//img//houseOfCards.png' style='width:30%;'>";
+            if(value == 4)
+                y = "<img src='https://rafaelescalfoni.github.io//desenv_web//img//narcos.png' style='width:30%;'>";
+            if(value == 5)
+                y = "<img src='https://rafaelescalfoni.github.io//desenv_web//img//carros.png' style='width:30%;'>";
+            if(value == 6)
+                y = "<img src='https://rafaelescalfoni.github.io//desenv_web//img//carros2.png' style='width:30%;'>";
+            if(value == 7)
+                y = "<img src='https://rafaelescalfoni.github.io//desenv_web//img//familyGuy.png' style='width:30%;'>";
+            if(value == 8)
+                y = "<img src='https://rafaelescalfoni.github.io//desenv_web//img//valente.png' style='width:30%;'>";
+            if(value== 9)
+                y = "<img src='https://rafaelescalfoni.github.io//desenv_web//img//friends.png' style='width:30%;'>";
+            if(value == 10)
+                y = "<img src='https://rafaelescalfoni.github.io//desenv_web//img//house.png' style='width:30%;'>";
+            if(value == 11)
+                y = "<img src='https://rafaelescalfoni.github.io//desenv_web//img//maosTalentosas.png' style='width:30%;'>";
+            if(value == 12)
+                y = "<img src='https://rafaelescalfoni.github.io//desenv_web//img//modernFamily.png' style='width:30%;'>";
+            if(value == 13)
+                y = "<img src='https://rafaelescalfoni.github.io//desenv_web//img//scarface.png' style='width:30%;'>";
+            if(value == 14)
+                y = "<img src='https://rafaelescalfoni.github.io//desenv_web//img//that70s.png' style='width:30%;'>";
+            if(value == 15)
+                y= "<img src='https://rafaelescalfoni.github.io//desenv_web//img//zumbilandia.png' style='width:30%;'>";
+            return y;
+        })
+        return seleciona;
+    }
+        var obj =  function (objeto)
+        {
+            var op = objeto.map(function(item)
+            {
+                let y;
+                if(item.rating == 5)
+                    y = "<p><img src='./imagem/5.png' style='width:10%;'> " + item.descricao ;
+                if(item.rating == 4)
+                    y = "<p> <img src='./imagem/4.png' style='width:10%;'> " + item.descricao;
+                if(item.rating == 3)
+                    y = "<p> <img src='./imagem/3.png' style='width:10%;'> " + item.descricao;
+                if(item.rating == 2)
+                    y = "<p> <img src='./imagem/2.png' style='width:10%;'></p><p> " + item.descricao + "</p>";
+                if(item.rating == 1)
+                    y = "<p> <img src='./imagem/1.png' style='width:10%;'></p><p> " + item.descricao + "</p>";
+                return y;
+            })
+            return op;
+        }
+        var preenche = function(fl)
+        {
+            let filme = fl;
+            let tam = filme.length;
+            for(i=0;i<tam;i++) 
+            {
+                if(filme[i].id && filme[i].titulo && filme[i].resumo && filme[i].generos && filme[i].titulosSemelhantes && filme[i].elenco && filme[i].opinioes)
+                    $("#cs").append
+                    (
+                        $("<div>").append
+                        (
+                            $("<h1>").text(filme[i].titulo).addClass("titulo"),
+                            $("<p>").html(claA(filme[i].classificacao)).addClass("classificacao"),
+                            $("<p>").html(filme[i].resumo).addClass("desc"),
+                            $("<p>").html("<b>Elenco:</b> " + filme[i].elenco).addClass("elenco"),
+                            $("<p>").html("<b>Gêneros: </b>" + filme[i].generos).addClass("genero"),
+                            $("<img>").attr("src" , filme[i].figura).addClass("image"),
+                            $("<p>").html("<b><br>Avaliações</b>").addClass("titulo"),
+                            $("<p>").html(obj(filme[i].opinioes)).addClass("opniao"),
+                            $("<p>").html("<b>Títulos semelhantes: <br></>").addClass("tit"),
+                            $("<p>").html(fp(filme[i].titulosSemelhantes)).addClass("tit"),
+                        ).addClass("col-md-6 col-sm-12 secao")
+                    );  
+            }
+        }        
+    }
+);
+    </script>
+    <br><br>
+    <footer>
+        <a class="retorno" href="./segap.html">Voltar</a>
+    </footer>
+</body>
+</html
