@@ -3,9 +3,12 @@
 <head>
 	<title>Catálogo de filmes</title>
 	<meta charset="utf-8">
+	<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Kalam:wght@300&display=swap" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="../css/filmes.css" media="screen"/>
-    <h1>Catálogo</h1> </head> <script >
+    <h1>Catálogo</h1> 
+	</head> 
+	<script>
        $(function(){       
     let code = $("#cep").val();
     let url = "https://rafaelescalfoni.github.io/desenv_web/filmes.json";
@@ -152,7 +155,6 @@
         {
             if(filme[i].id && filme[i].titulo && filme[i].resumo && filme[i].generos && filme[i].titulosSemelhantes && filme[i].elenco && filme[i].opinioes)
             {
-                // let dive1 = $("<div>");
                 $("#cs").append
                 (
                     $("<div>").append
@@ -174,6 +176,17 @@
     }
 
 });
+	</script>
+	<body>
+		<body>
+    <br><br>
+    <div id="cs">
+    </div>
+    <section> 
+        <div class="container">
+        </div>
+    </section>
+  </body>
     <br><br>
     <footer>
         <a class="retorno" href="./segap.html">Voltar</a>
