@@ -1,0 +1,68 @@
+.secao
+{
+    padding: 2%;
+    height: 900px;
+    background-color: red;
+    border: solid 15px red;
+}
+body
+{
+    background-color: red;
+}
+
+.genero
+{
+    text-align: justify;
+    float: right;
+    width: 40%;
+}
+
+.desc
+{
+    float: left;
+    text-align: justify;
+}
+
+.secao p 
+{
+    font-size: 110%;
+    color: black;
+    font-family: 'Georgia', serif;
+    text-align: justify;
+}
+
+.tit
+{
+    float: left;
+    width: 60%;
+}
+
+.titulo
+{
+    float: left;
+    width: 80%;
+}
+
+.opniao
+{
+    width: 100%;
+    float: left;
+}
+
+.opniao p 
+{
+    font-family: 'Georgia', serif;
+    color: black;
+}
+
+.elenco
+{
+    float: right;
+    width: 40%;
+}
+
+.image
+{
+    width: 60%;
+    float: left;
+}
