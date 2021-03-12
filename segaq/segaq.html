@@ -1,14 +1,179 @@
-
 <!DOCTYPE html>
-<html lang="pt-br">
-	<head>
-		<title>Atividades</title>
-	    <meta charset="UTF-8">
-		<link rel="stylesheet" href="../css/estilo.css">
-	</head>
-
-	<body>
-		<h1>Atividades</h1>
-        <a class="retorno" href="../index.html">Voltar</a>
-	</body>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<title>Exercício sobre Gases</title>
+    <link rel="stylesheet" href="../../css/estilo.css">
+	<h4>Maria Luiza e Larissa</h4>
+	<h1>Exercício sobre Gases</h1>
+</head>
+<body>
+<h2>Para exemplificar o conteúdo visto, vamos fazer alguns exercícios sobre o gás natural, especificamente, e alguns de seus componentes, isoladamente.</h2>
+<h2>Composição:</h2>
+<h4>Metano (CH<sub>4</sub>) - 89,24%</h4>
+<h4>Etano (C<sub>2</sub>H<sub>6</sub>) - 7,86%</h4>
+<h4>Propano (C<sub>3</sub>H<sub>8</sub>) - 0,24%</h4>
+<h4>Iso-Butano (iC<sub>4</sub>H<sub>10</sub>)</h4>
+<h4>N-Butano (nC<sub>4</sub>H<sub>10</sub>)</h4>
+<h4>Pentano (C<sub>5</sub>H<sub>12</sub>)</h4>
+<h4>Dióxido de Carbono (CO<sub>2</sub>) - 1,25%</h4>
+<h4>Nitrogênio (N<sub>2</sub>) - 1,34%</h4>
+<h4>Oxigênio (O<sub>2</sub>) - 0,07%</h4>
+<h3>O gás natural é uma mistura de hidrocarbonetos leves, que, à temperatura ambiente e pressão atmosférica, permanece no estado gasoso.
+    Na natureza, ele é encontrado acumulado em rochas porosas no subsolo, frequentemente acompanhado por petróleo (gás associado), ou constituindo um reservatório (gás não associado).</h3>
+<script type="text/javascript">
+    function letraValor(){
+        let radio = document.getElementsByName('opcao');
+        for(let i = 0; i < radio.length; i++){
+         if(radio[i].checked){
+          return radio[i].value;
+         }
+   } 
+    return null;
+   }
+    function exer1(){
+       
+       let letra = letraValor();
+       if( letra == 'e1'){
+           let texto = "<h3>Resposta certa!</h3>";
+           document.getElementById("certo1").innerHTML = texto;
+           document.getElementById("errado1").innerHTML = '';
+           document.getElementById("resp1").innerHTML = "<h3>Volume total = 15.000 L<br>Fração molar do CH<sub>4</sub> = 87 % (0,87):<br><br> V<sub>CH<sub>4</sub></sub> / V<sub>Total</sub> = X<sub>CH<sub>4</sub></sub><br>V<sub>CH<sub>4</sub></sub> / 15.000 = 0,87<br>V<sub>CH<sub>4</sub></sub> = 15.000 . 0,87<br>V<sub>CH<sub>4</sub></sub>= 13.050 L</h3>";             
+       }
+       else{
+           let texto = "<h3>Resposta errada!</h3>";
+           document.getElementById("errado1").innerHTML = texto;
+           document.getElementById("certo1").innerHTML = '';
+           document.getElementById("resp1").innerHTML = "<h3>Resposta certa: 13.050 L (letra e)<br><br>Volume total = 15.000 L<br>Fração molar do CH<sub>4</sub> = 87 % (0,87):<br><br> V<sub>CH<sub>4</sub></sub> / V<sub>Total</sub> = X<sub>CH<sub>4</sub></sub><br>V<sub>CH<sub>4</sub></sub> / 15.000 = 0,87<br>V<sub>CH<sub>4</sub></sub> = 15.000 . 0,87<br>V<sub>CH<sub>4</sub></sub>= 13.050 L</h3>";
+       }
+   }
+   function exer2(){
+       
+       let letra = letraValor();
+       if( letra == 'a2'){
+           let texto = "<h3>Resposta certa!</h3>";
+           document.getElementById("certo2").innerHTML = texto;
+           document.getElementById("errado2").innerHTML = '';
+           document.getElementById("resp2").innerHTML = "<h3>1º Passo: Calcular a massa molar do N<sub>2</sub>.<br> Para isso, basta multiplicar a quantidade de átomos por sua massa molar:<br>M<sub>N2</sub> = 2 . 14<br>M<sub>N2</sub> = 28 g/mol<br>2º Passo: Calcular a massa molar do O<sub>2</sub>.<br>Para isso, basta multiplicar a quantidade de átomos por sua massa molar:<br>M<sub>O2</sub> = 2 . 16<br>M<sub>O2</sub> = 32 g/mol<br>3º Passo: Cálculo do número de mol de N<sub>2</sub>.<br>Para determiná-lo, devemos dividir a massa de N<sub>2</sub> por sua massa molar:<br>n<sub>N2</sub> = m<sub>N2</sub>/M<sub>N2</sub> <br> n<sub>N2</sub> = 42/28 <br>n<sub>N2<sub> = 1,5 mol<br>4º Passo: Cálculo do número de mol de O<sub>2</sub>.<br>Para determiná-lo, devemos dividir a massa de O<sub>2</sub> por sua massa molar:<br>n<sub>O2</sub> = m<sub>O2</sub>/M<sub>O2</sub><br>n<sub>O2</sub> = 16/32<br>n<sub>O2</sub> = 0,5 mol<br>5º Passo: Cálculo do número de mol total.<br>Para determiná-lo, devemos somar o número de mol dos gases encontrados anteriormente:<br>n<sub>T</sub>= n<sub>N2</sub> + n<sub>O2</sub><br>n<sub>T</sub>= 1,5 + 0,5<br>n<sub>T</sub>= 2,0<br>6º Passo: Determinar a pressão total da mistura.<br>P<sub>T</sub>.V<sub>T</sub> = n<sub>T</sub>.R.T<br>P<sub>T</sub>.2 = 2. 0,082.300<br>P<sub>T</sub>= 24,6 atm<br>7º Passo: Determinar a pressão parcial do N<sub>2</sub>.<br>A pressão parcial do N<sub>2</sub> é determinada pela seguinte expressão:<br> P<sub>N2<sub>/P<sub>T</sub> = n<sub>N2</sub>/n<sub>T</sub> <br> P<sub>N2</sub>/24,6 = 1,5/2 <br> 2 . P<sub>N2</sub>=24,6 . 1,5 <br> 2 . P<sub>N2</sub>=36,9 <br> P<sub>N2</sub> = 36,9/2 <br> P<sub>N2</sub>=18,45 atm <br>8º Passo: Determinar a pressão parcial do O<sub>2</sub>.<br> A pressão parcial do O<sub>2</sub> é determinada pela seguinte expressão: P<sub>O2</sub>/P<sub>T</sub> = n<sub>O2</sub>/n<sub>T</sub><br> P<sub>O2</sub>/24,6 = 0,5/2<br>2 . P<sub>O2</sub> = 24,6 . 0,5<br>2 . P<sub>O2</sub>=12,3<br>P<sub>O2</sub> = 12,3/2<br>P<sub>O2</sub> = 6,15 atm</h3>";
+       }
+       else{
+           let texto = "<h3>Resposta errada!</h3>";
+           document.getElementById("errado2").innerHTML = texto;
+           document.getElementById("certo2").innerHTML = '';
+           document.getElementById("resp2").innerHTML = "<h3>Resposta certa:18,45 e 6,15 (letra a).<br><br>1º Passo: Calcular a massa molar do N<sub>2</sub>.<br> Para isso, basta multiplicar a quantidade de átomos por sua massa molar:<br>M<sub>N2</sub> = 2 . 14<br>M<sub>N2</sub> = 28 g/mol<br>2º Passo: Calcular a massa molar do O<sub>2</sub>.<br>Para isso, basta multiplicar a quantidade de átomos por sua massa molar:<br>M<sub>O2</sub> = 2 . 16<br>M<sub>O2</sub> = 32 g/mol<br>3º Passo: Cálculo do número de mol de N<sub>2</sub>.<br>Para determiná-lo, devemos dividir a massa de N<sub>2</sub> por sua massa molar:<br>n<sub>N2</sub> = m<sub>N2</sub>/M<sub>N2</sub> <br> n<sub>N2</sub> = 42/28 <br>n<sub>N2<sub> = 1,5 mol<br>4º Passo: Cálculo do número de mol de O<sub>2</sub>.<br>Para determiná-lo, devemos dividir a massa de O<sub>2</sub> por sua massa molar:<br>n<sub>O2</sub> = m<sub>O2</sub>/M<sub>O2</sub><br>n<sub>O2</sub> = 16/32<br>n<sub>O2</sub> = 0,5 mol<br>5º Passo: Cálculo do número de mol total.<br>Para determiná-lo, devemos somar o número de mol dos gases encontrados anteriormente:<br>n<sub>T</sub>= n<sub>N2</sub> + n<sub>O2</sub><br>n<sub>T</sub>= 1,5 + 0,5<br>n<sub>T</sub>= 2,0<br>6º Passo: Determinar a pressão total da mistura.<br>P<sub>T</sub>.V<sub>T</sub> = n<sub>T</sub>.R.T<br>P<sub>T</sub>.2 = 2. 0,082.300<br>P<sub>T</sub>= 24,6 atm<br>7º Passo: Determinar a pressão parcial do N<sub>2</sub> é determinada pela seguinte expressão:<br> P<sub>N2<sub>/P<sub>T</sub> = n<sub>N2</sub>/n<sub>T</sub> <br> P<sub>N2</sub>/24,6 = 1,5/2 <br> 2 . P<sub>N2</sub>=24,6 . 1,5 <br> 2 . P<sub>N2</sub>=36,9 <br> P<sub>N2</sub> = 36,9/2 <br> P<sub>N2</sub>=18,45 atm <br>8º Passo: Determinar a pressão parcial do O<sub>2</sub>.<br> A pressão parcial do O<sub>2</sub> é determinada pela seguinte expressão: P<sub>O2</sub>/P<sub>T</sub> = n<sub>O2</sub>/n<sub>T</sub><br> P<sub>O2</sub>/24,6 = 0,5/2<br>2 . P<sub>O2</sub> = 24,6 . 0,5<br>2 . P<sub>O2</sub>=12,3<br>P<sub>O2</sub> = 12,3/2<br>P<sub>O2</sub> = 6,15 atm</h3>"; 
+		   
+       }
+   }
+    function exer3(){
+       
+       let letra = letraValor();
+       if( letra == 'd3'){
+           let texto = "<h3>Resposta certa!</h3>";
+           document.getElementById("certo3").innerHTML = texto;
+           document.getElementById("errado3").innerHTML = '';
+           document.getElementById("resp3").innerHTML ="<h3>1º Passo:Determinar o número de mol total da mistura.<br>Para isso, basta utilizar os valores da pressão, volume e temperatura na seguinte expressão:<br>P . V = n<sub>T</sub> . R . T<br>3 . 60 = n<sub>T</sub> . 0,082 . 400<br>3 . 60 = n<sub>T</sub> . 32,8<br>n<sub>T</sub> = 180/32,8<br>n<sub>T</sub> = 5,48 mol<br>2º Passo:Determinar o número de mol do butano (n<sub>C<sub>4</sub>H<sub>10</sub></sub>).<br>Para isso, basta utilizar o número de mol total e o número de mol do metano na expressão a seguir:<br>n<sub>T</sub> = n<sub>CH4</sub> + n<sub>C4H10</sub><br>5,48 = 5 + n<sub>C4H10</sub><br>n<sub>C4H10</sub> = 5,48 - 5<br>n<sub>C4H10</sub> = 0,48 mol<br>3º Passo:Determinar o volume do butano.<br>Para calcular o volume parcial do butano, basta utilizar o volume total fornecido, o número de mol total e o número de mol do butano, calculados anteriormente, na expressão a seguir:<br>V<sub>C4H10</sub>/V<sub>T</sub> = n<sub>CH4</sub>/n<sub>T</sub><br>V<sub>C4H10</sub>/60 = 0,48/5,48<br>V<sub>C4H10</sub> . 5,48 = 60 . 0,48<br>V<sub>C4H10</sub> . 5,48 = 28,8<br>V<sub>C4H10</sub> = 28,8/5,48<b>V<sub>C4H10</sub> = 5,25 L</h3>";
+       }
+       else{
+           let texto = "<h3>Resposta errada!</h3>";
+           document.getElementById("errado3").innerHTML = texto;
+           document.getElementById("certo3").innerHTML = '';
+           document.getElementById("resp3").innerHTML ="<h3>Resposta certa: 5,25 L (letra d)<br><br>1º Passo:Determinar o número de mol total da mistura.<br>Para isso, basta utilizar os valores da pressão, volume e temperatura na seguinte expressão:<br>P . V = n<sub>T</sub> . R . T<br>3 . 60 = n<sub>T</sub> . 0,082 . 400<br>3 . 60 = n<sub>T</sub> . 32,8<br>n<sub>T</sub> = 180/32,8<br>n<sub>T</sub> = 5,48 mol<br>2º Passo:Determinar o número de mol do butano (n<sub>C<sub>4</sub>H<sub>10</sub></sub>).<br>Para isso, basta utilizar o número de mol total e o número de mol do metano na expressão a seguir:<br>n<sub>T</sub> = n<sub>CH4</sub> + n<sub>C4H10</sub><br>5,48 = 5 + n<sub>C4H10</sub><br>n<sub>C4H10</sub> = 5,48 - 5<br>n<sub>C4H10</sub> = 0,48 mol<br>3º Passo:Determinar o volume do butano.<br>Para calcular o volume parcial do butano, basta utilizar o volume total fornecido, o número de mol total e o número de mol do butano, calculados anteriormente, na expressão a seguir:<br>V<sub>C4H10</sub>/V<sub>T</sub> = n<sub>CH4</sub>/n<sub>T</sub><br>V<sub>C4H10</sub>/60 = 0,48/5,48<br>V<sub>C4H10</sub> . 5,48 = 60 . 0,48<br>V<sub>C4H10</sub> . 5,48 = 28,8<br>V<sub>C4H10</sub> = 28,8/5,48<b>V<sub>C4H10</sub> = 5,25 L</h3>";		   
+       }
+   } 
+    function exer4(){
+       
+       let letra = letraValor();
+       if( letra == 'b4'){
+           let texto = "<h3>Resposta certa!</h3>";
+           document.getElementById("certo4").innerHTML = texto;
+           document.getElementById("errado4").innerHTML = '';
+           document.getElementById("resp4").innerHTML ="<h3>Dadas as informações na questão, vamos determinar a pressão total dos gases misturados:<br>P<sub>T</sub> = P<sub>SO2</sub> + P<sub>N2O</sub> + P<sub>CH4</sub><br>P<sub>T</sub> = 0,9 + 1,3 + 1,2<br>P<sub>T</sub> = 3,4 atm<br>Agora vamos utilizar a pressão total, a pressão do SO<sub>2</sub> e o volume total da mistura na seguinte expressão para determinar o volume parcial do SO<sub>2</sub>:<br>V<sub>O2</sub>/V<sub>T</sub> = P<sub>SO2</sub>/P<sub>T</sub><br>V<sub>O2</sub>/40 = 0,9/3,4<br>V<sub>O2</sub> . 3,4 = 40 . 0,9<br>V<sub>O2</sub> = 36/3,4<br>V<sub>O2</sub> = 10,59 L<br>Fazendo a mesma conta que foi feita para descobrir o volume parcial de O<sub>2</sub>, mas para o N<sub>2</sub>O e CH<sub>4</sub> (colocando suas respectivas pressões parciais), temos:<br>V<sub>N2O</sub> = 15,3 L e V<sub>CH4</sub> = 14,11 L.</h3>";
+		   
+       }
+       else{
+           let texto = "<h3>Resposta errada!</h3>";
+           document.getElementById("errado4").innerHTML = texto;
+           document.getElementById("certo4").innerHTML = '';
+           document.getElementById("resp4").innerHTML ="<h3>Resposta certa: 10,59 L; 15,3 L; 14,11 L (letra b)<br><br>Dadas as informações na questão, vamos determinar a pressão total dos gases misturados:<br>P<sub>T</sub> = P<sub>SO2</sub> + P<sub>N2O</sub> + P<sub>CH4</sub><br>P<sub>T</sub> = 0,9 + 1,3 + 1,2<br>P<sub>T</sub> = 3,4 atm<br>Agora vamos utilizar a pressão total, a pressão do SO<sub>2</sub> e o volume total da mistura na seguinte expressão para determinar o volume parcial do SO<sub>2</sub>:<br>V<sub>O2</sub>/V<sub>T</sub> = P<sub>SO2</sub>/P<sub>T</sub><br>V<sub>O2</sub>/40 = 0,9/3,4<br>V<sub>O2</sub> . 3,4 = 40 . 0,9<br>V<sub>O2</sub> = 36/3,4<br>V<sub>O2</sub> = 10,59 L<br>Fazendo a mesma conta que foi feita para descobrir o volume parcial de O<sub>2</sub>, mas para o N<sub>2</sub>O e CH<sub>4</sub> (colocando suas respectivas pressões parciais), temos:<br>V<sub>N2O</sub> = 15,3 L e V<sub>CH4</sub> = 14,11 L.</h3>";
+		   
+       }
+   } 
+    function exer5(){
+	
+	   let letra = letraValor();
+	   if( letra == 'a5'){
+	       let texto = "<h3>Resposta certa!</h3>";
+		   document.getElementById("certo5").innerHTML = texto;
+		   document.getElementById("errado5").innerHTML = '';
+		   document.getElementById("resp5").innerHTML = "<h3>1º Passo: Calcular a massa molar do brometo de hidrogênio.<br>Para isso, devemos multiplicar a massa atômica do elemento pela sua quantidade de átomos na fórmula e, em seguida, somar os resultados:<br>Massa molar do HBr = 1.1 + 1.80<br>Massa molar do HBr = 1 + 80<br>Massa molar do HBr = 81 g/mol<br>2º Passo: Determinar a velocidade de efusão do brometo de hidrogênio.<br>Para isso, devemos utilizar os valores fornecidos na fórmula para cálculo da velocidade de efusão:</h3><p><img src='https://static.mundoeducacao.uol.com.br/mundoeducacao/conteudo/calculo-da-velocidade-do-HBr.jpg'></p>";
+       }
+	   else{
+	        let texto = "<h3>Resposta errada!</h3>";
+			document.getElementById("errado5").innerHTML = texto;
+			document.getElementById("certo5").innerHTML = '';
+			document.getElementById("resp5").innerHTML ="<h3>Resposta certa:(4 . 36)/9 mililitros por minuto (letra a)<br><br>1º Passo: Calcular a massa molar do brometo de hidrogênio.<br>Para isso, devemos multiplicar a massa atômica do elemento pela sua quantidade de átomos na fórmula e, em seguida, somar os resultados:<br>Massa molar do HBr = 1.1 + 1.80<br>Massa molar do HBr = 1 + 80<br>Massa molar do HBr = 81 g/mol<br>2º Passo: Determinar a velocidade de efusão do brometo de hidrogênio.<br>Para isso, devemos utilizar os valores fornecidos na fórmula para cálculo da velocidade de efusão:</h3><p><img src='https://static.mundoeducacao.uol.com.br/mundoeducacao/conteudo/calculo-da-velocidade-do-HBr.jpg'></p>";
+       }
+   }
+</script>
+<div id="exer1">
+    <h3>1) O gás natural veicular (GNV) é um combustível disponibilizado na forma gasosa. Ele é constituído predominantemente por metano (CH<sub>4</sub>), com teor mínimo em torno de 87%, e o restante é composto por outros gases, como etano e propano. Sabendo disso, calcule o volume parcial do gás metano em um cilindro de 15.000 L.</h3>
+    <p><img src='http://gaspoint.com.br/imagens/corolla%20vvti%20sequent-1.JPG'></p>
+	<input type="radio" name="opcao" value="a1" id="a">a)1.000 L <br>
+    <input type="radio" name="opcao" value="b1" id="b">b)15.000 L <br>
+    <input type="radio" name="opcao" value="c1" id="c">c)11.418 L <br>
+    <input type="radio" name="opcao" value="d1" id="d">d)14.500 L <br>
+	<input type="radio" name="opcao" value="e1" id="e">e)13.050 L<br><br>
+	<button onclick="exer1()" value="Gabarito" >Confira</button>
+    <p id="certo1" class="certo"></p><p id="errado1" class="errado"></p>
+    <p id="resp1"></p>
+    </div>
+    <div id="exer2">
+    <h3>2) (UFC-CE) Em um recipiente fechado com capacidade para 2,0 L, encontra-se uma mistura de gases ideais composta por 42,0 g de N<sub>2</sub> e 16,0 g de O<sub>2</sub> a 300 K. Assinale a alternativa que expressa corretamente os valores das pressões parciais (em atm) dos gases N<sub>2</sub> e O<sub>2</sub>, respectivamente, nessa mistura.</h3> 
+    <h3>Dados: R = 0,082 atm.L.mol<sup>–1</sup>.K<sup>–1</sup></h3>
+	
+	<input type="radio" name="opcao" value="a2" id="a2">a)18,45 e 6,15<br>
+	<input type="radio" name="opcao" value="b2" id="b2">b)16,45 e 8,15<br>
+	<input type="radio" name="opcao" value="c2" id="c2">c)14,45 e 10,45<br>
+	<input type="radio" name="opcao" value="d2" id="d2">d)12,45 e 12,15<br>
+	<input type="radio" name="opcao" value="e2" id="e2">e)10,45 e 14,15<br><br>
+	<button onclick="exer2()">Confira</button>	
+	<p id="certo2" class="certo"></p><p id="errado2" class="errado"></p>
+	<p id="resp2"></p>
+	</div>
+	<div id="exer3">
+	<h3>3) Uma mistura gasosa formada pelos gases metano e butano foi adicionada a um determinado recipiente com volume de 60 L e, logo em seguida, aquecida até a temperatura de 127 °C a uma pressão de 3 atm. Sabendo que o número de mol de metano utilizado na mistura foi de 5 mol, qual é o valor do volume parcial do butano nessa mistura?</h3>
+	<input type="radio" name="opcao" value="a3" id="a3">a)2,25 L<br>
+	<input type="radio" name="opcao" value="b3" id="b3">b)3,25 L<br>
+	<input type="radio" name="opcao" value="c3" id="c3">c)4,25 L<br>
+	<input type="radio" name="opcao" value="d3" id="d3">d)5,25 L<br>
+	<input type="radio" name="opcao" value="e3" id="e3">e)6,25 L<br><br>
+	<button onclick="exer3()" value="Gabarito" >Confira</button>
+	<p id="certo3" class="certo"></p><p id="errado3" class="errado"></p>
+	<p id="resp3"></p>
+    </div>
+	<div id="exer4">
+	<h3>4) Uma mistura gasosa foi formada pela adição dos gases SO<sub>2</sub>, N<sub>2</sub>O e CH<sub>4</sub> a um recipiente com capacidade de 40 L. Os gases que foram misturados apresentavam, respectivamente, pressões parciais iguais a 0,90 atm, 1,30 atm e 1,20 atm. Qual das alternativas a seguir indica, nessa ordem, o volume parcial de cada um desses gases?</h3>
+	<input type="radio" name="opcao" value="a4" id="a4">a)11 L; 16 L; 13 L<br>
+	<input type="radio" name="opcao" value="b4" id="b4">b)10,59 L; 15,3 L; 14,11 L<br>
+	<input type="radio" name="opcao" value="c4" id="c4">c)15,3 L; 10,59 L; 14,11 L<br>
+	<input type="radio" name="opcao" value="d4" id="d4">d)16 L; 11 L; 13 L<br>
+	<input type="radio" name="opcao" value="e4" id="e4">e)13 L; 11 L; 16 L<br><br>    
+    <button onclick="exer4()" value="Gabarito" >Confira</button>
+	<p id="certo4" class="certo"></p><p id="errado4" class="errado"></p>
+	<p id="resp4"></p>
+    </div>
+    <div id="exer5">
+	<h3>5) (F.C. Chagas-BA) Metano começa a escapar por um pequeno orifício com a velocidade de 36 mililitros por minuto. Se o mesmo recipiente, nas mesmas condições, contivesse brometo de hidrogênio, qual seria a velocidade inicial de escape pelo mesmo orifício?</h3>
+	<h3>Dados: H=1; C=12; Br=80</h3>
+	<input type="radio" name="opcao" value="a5" id="a5">a)(4 . 36)/9 mililitros por minuto <br>
+	<input type="radio" name="opcao" value="b5" id="b5">b)(16 . 36)/81 mililitros por minuto <br>
+	<input type="radio" name="opcao" value="c5" id="c5">c)9 /(36 . 4) mililitros por minuto <br>
+	<input type="radio" name="opcao" value="d5" id="d5">d)81/(16 . 36) mililitros por minuto <br>
+	<input type="radio" name="opcao" value="e5" id="e5">e)(4 . 6)/9 mililitros por minuto<br><br>    
+    <button onclick="exer5()" value="Gabarito" >Confira</button>
+	<p id="certo5" class="certo"></p><p id="errado5" class="errado"></p>
+	<p id="resp5"></p>
+    </div>
+</body>
 </html>
