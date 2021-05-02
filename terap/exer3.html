@@ -15,9 +15,6 @@
             let textarray = $("#textarray").val();
             textarray = textarray.replace(/\s+/g, '');
             let array = textarray.split(",");
-            let tam = array.length;
-            if(array[tam-1] == "")
-                array.pop();
             $("#result").html("<br>Dobros: " + dobrar(array) + "<br>Pares: " + par(array) + "<br>Soma dos elementos: " + soma(array));
         })
         function dobrar (vetor)
