@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<title>Exercício 3</title>
+    <link rel="stylesheet" href="../../css/estilo.css">
+    <h1>Exercício 3</h1>
+    <h2>Digite um sequência de números (entre vírgulas) e decubra seus dobros, seus pares e a soma dos elementos.</h2>
+    <input type="text" id="textarray"><br><br>
+    <button type="button" id="botao">Executar</button>
+    <p id="result"></p>
+    <script>
+        $(function(){
+        $("#botao").click(function(){
+            let textarray = $("#textarray").val();
+            textarray = textarray.replace(/\s+/g, '');
+            let array = textarray.split(",");
+            let tam = array.length;
+            if(array[tam-1] == "")
+                array.pop();
+            $("#result").html("<br>Dobros: " + dobrar(array) + "<br>Pares: " + par(array) + "<br>Soma dos elementos: " + soma(array));
+        })
+        function dobrar (vetor)
+        {
+            let n = vetor.map(function(num)
+            {
+                return num*2;
+            })
+            return n;
+        }
+        function par (vetor)
+        {
+            let n = vetor.filter(function(num)
+            {
+                return num%2==0;
+            })
+            if(n == "")
+                return "Não há pares na sua sequência.";
+            else
+                return n;
+        }
+        function soma (vetor)
+        {
+            let n = vetor.reduce(function(soma, num)
+            {
+                return parseInt(soma) + parseInt(num);
+            });
+            return n;
+        }
+        })
+</script>
+<a class="retorno" href="./terap.html">Voltar</a>
+</html>
