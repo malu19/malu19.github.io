@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<title>Exercício 1</title>
+    <link rel="stylesheet" href="../../css/estilo.css">
+    <h1>Exercício 1</h1>
+    <h2>Digite os números entre virgulas para descobrir o valor mínimo, o máximo, a sequência sem repetições e em ordem.</h2>
+    <input type="text" id="textarray"><br><br>
+    <button type="button" id="botao">Executar</button>
+    <p id="result"></p>
+    <script>
+        $(function(){
+            $("#botao").click(function(){
+                let textarray = $("#textarray").val();
+                textarray = textarray.replace(/\s+/g, '');
+                let array = textarray.split(",");
+                let tam = array.length;
+                if(array[tam-1] == "")
+                    array.pop();
+                $("#result").html("<br>Valor minimo: " + minimo(array) + "<br> Valor máximo: " + maximo(array) + "<br> Array sem repetição: " + unico(array) + "<br> Array em ordem: " + ordem(array));
+            })
+            function minimo (vetor)
+            {
+                let min;
+                vetor.forEach( function(num)
+                {
+                    if(num == Math.min(...vetor))
+                    {
+                        min = num;
+                    }            
+                });
+                return min;
+            }
+            function maximo (vetor)
+            {
+                let max;
+                vetor.forEach( function(num)
+                {
+                    if(num == Math.max(...vetor))
+                    {
+                        max = num;
+                    }            
+                });
+                return max;
+            }
+            function unico (vetor)
+            {
+                let vetor_unico = [...new Set(vetor)];
+                return vetor_unico.join(",");
+            }
+            function ordem (vetor)
+            {
+                return vetor.sort().join(",");
+            }
+        })
+    </script>
+  	<a class="retorno" href="./terap.html">Voltar</a>
+  </html>
