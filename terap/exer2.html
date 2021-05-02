@@ -16,10 +16,6 @@ $(function(){
         textarray = textarray.replace(/\s+/g, '');
         let array = textarray.split(",");
         let tam = array.length;
-        if(array[tam-1] == "")
-        {
-            array.pop();
-        }
         $("#result").html(fibonacci(textarray));
     })
     function fibonacci (d) 
