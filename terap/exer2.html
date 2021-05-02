@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<title>Exercício 2</title>
+    <link rel="stylesheet" href="../../css/estilo.css">
+    <h1>Exercício 2</h1>
+    <h2>Descubra a sequência de Fibonacci até a posição desejada.</h2>
+    <input type="number" id="textarray" placeholder="Posição desejada"><br><br>
+    <button type="button" id="botao">Executar</button>
+    <p id="result"></p>
+    <script>
+$(function(){
+    $("#botao").click(function(){
+        let textarray = $("#textarray").val();
+        textarray = textarray.replace(/\s+/g, '');
+        let array = textarray.split(",");
+        let tam = array.length;
+        if(array[tam-1] == "")
+        {
+            array.pop();
+        }
+        $("#result").html(fibonacci(textarray));
+    })
+    function fibonacci (d) 
+    {
+        let array = new Array;
+        array.push(0);
+        let a=0; 
+        let b=1;
+        let c=1;
+        for (let i=0; i<d-1; i++) 
+        {
+            array.push(c);
+            c=a+b;
+            a=b;
+            b=c;
+        }
+        return array.join(",");
+    }
+})
+</script>
+<a class="retorno" href="./terap.html">Voltar</a>
+</html>
