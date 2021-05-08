@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<title>Simulação</title>
+    <link rel="stylesheet" href="../../css/estilo.css">
+    <h1>Simulação</h1>
+<h1>Insira uma quantidade de leite (solvente) e chocolate em pó (soluto) e veja a concentração molar (molaridade) da solução.</h1><br>
+<h2>Solução: leite + chocolate em pó</h2>
+<form>
+    <input type="number" id="solvente" placeholder="Quantidade de leite em litro (l)"><br>
+    <input type="number" id="soluto" placeholder="Quantidade de chocolate em pó em gramas (g)"><br><br>
+    <button type="button" id="botao"> Calcular </button>
+</form><br>
+<p id="resultado"></p>
+<script>
+    $(function()
+    {
+        $("#botao").click(function(){
+            let soluto = $("#soluto").val();
+            let solvente = $("#solvente").val();
+            soluto = parseFloat(soluto);
+            solvente = parseFloat(solvente);
+            let gpmol = soluto/180.164;
+            let molaridade = gpmol/solvente;
+            let molpg = soluto*180.164;
+            gpmol = gpmol.toFixed(3);
+            molaridade = molaridade.toFixed(3);
+            molpg = molpg.toFixed(3);
+            $("#resultado").html("Para fins de resolução foi usado o Teobromina (C<sub>7</sub>H<sub>8</sub>N<sub>4</sub>O<sub>2</sub>), alcalóide primário achado no cacau e chocolate.<br>" + soluto + "g = " + gpmol + "mol <br> C = " + gpmol + "/" + solvente + "<br><b>C = " + molaridade + "mol/l ou " + molpg + "g/l<b>");
+            if (soluto/solvente>100)
+                $("#resultado").html("Nessa situação há corpo de fundo, porque a quantidade de soluto é maior que a solubilidade (solubilidade do chocolate em pó é de 30g em 0,3l de leite - concentração=100g/l)<br>Para fins de resolução foi usado o Teobromina (C<sub>7</sub>H<sub>8</sub>N<sub>4</sub>O<sub>2</sub>), alcalóide primário achado no cacau e chocolate.<br>" + soluto + "g = " + gpmol + "mol <br> C = " + gpmol + "/" + solvente + "<br><b>C = " + molaridade + "mol/l ou " + molpg + "g/l<b>");
+        })
+    })
+</script>
+    <a class="retorno" href="../tercq/solucoes.html">Voltar para conteúdo</a>
+</html>
