@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<title>Simulação</title>
+    <link rel="stylesheet" href="../../css/estilo.css">
+    <h1>Simulação</h1>
+<h1>Insira uma quantidade de leite (solvente) e chocolate em pó (soluto) e veja a classificação da solução resultante.</h1><br>
+<h2>Solução: leite + chocolate em pó</h2>
+<form>
+    <input type="number" id="solvente" placeholder="Quantidade leite em mililitros (ml)"><br>
+    <input type="number" id="soluto" placeholder="Quantidade de chocolate em pó em gramas (g)"><br><br>
+    <button type="button" id="botao"> Calcular </button>
+</form><br>
+<p id="resultado"></p>
+<script>
+    $(function()
+    {
+        $("#botao").click(function(){
+            let solvente = $("#solvente").val();
+            let soluto = $("#soluto").val();
+            suluto = parseFloat(soluto);
+            solvente = parseFloat(solvente);
+            let div=suluto/solvente;
+            if(div < 0.1)
+            {
+                $("#resultado").html("<h2>Solução insaturada</h2>Sabendo que a solubilidade do chocolate em pó é de 30g em 300 ml de leite (concentração=0,1 g/ml),<br>concentração = massa do soluto/volume utilizado.<br>" + "c = " + soluto + "/" + solvente + "<br>c = " + div + "<br> Como "+ div + " é menor do que 0,1, a solução é insaturada (quantidade de soluto dissolvida está abaixo do máximo que o solvente consegue dissolver).");
+            }
+            if(div > 0.1)
+            {
+                $("#resultado").html("<h2>Solução supersaturada</h2>Sabendo que a solubilidade do chocolate em pó é de 30g em 300 ml de leite (concentração=0,1 g/ml),<br>concentração = massa do soluto/volume utilizado.<br>" + "c = " + soluto + "/" + solvente + "<br>c = " + div + "<br> Como "+ div + " é maior do que 0,1, a solução é supersaturada (quantidade de soluto superior a máxima suportada pelo solvente).");
+            }
+            if(div == 0.1)
+            {
+                $("#resultado").html("<h2>Solução saturada</h2>Sabendo que a solubilidade do chocolate em pó é de 30g em 300 ml de leite (concentração=0,1 g/ml),<br>concentração = massa do soluto/volume utilizado.<br>" + "c = " + soluto + "/" + solvente + "<br>c = " + div + "<br> Como "+ div + " é igual a 0,1, a solução é saturada (quantidade de soluto dissolvida é a máxima suportada pelo solvente).");
+            }
+        })
+})
+</script>
+	<a class="retorno" href="../tercq/solucoes.html">Voltar para conteúdo</a>
+</html>
