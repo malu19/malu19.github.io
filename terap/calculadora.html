@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<title>Exercício 1</title>
+    <link rel="stylesheet" href="../../css/estilo.css">
+    <h1>Exercício 1</h1>
+    <h2>Calculadora</h2>
+</head>
+<body>    
+    <input type="number" id="x1" placeholder="x1">
+    <input type="number" id="x2" placeholder="x2">
+    <select id="oper">
+        <option>Soma</option>
+        <option>Subtração</option>
+        <option>Multiplicação</option>
+        <option>Divisão</option=>
+    </select>
+    <br><br>
+    <button type="button" id="botao">Executar</button>
+    <p id="result"></p>
+    <script>
+        $(function()
+        {
+            $("#botao").click(function(){
+                let x1 = $("#x1").val();
+                let x2 = $("#x2").val();
+                let oper = $("#oper").val();
+                $("#result").text(x1 + simb(oper) + x2 + "=" + conta(x1,x2,oper));
+            })
+            function conta (x1, x2, oper2)
+            {
+                x1 = parseFloat(x1);
+                x2 = parseFloat(x2);
+                switch(oper2)
+                {
+                    case "Soma": return x1+x2; 
+                    break;
+                    case "Subtração": return x1-x2; 
+                    break;
+                    case "Multiplicação": return x1 * x2; 
+                    break;
+                    case "Divisão": return x1/x2; 
+                    break;
+                }
+            }
+        })
+        function simb (oper3)
+        {
+            switch(oper3)
+                {
+                    case "Soma": return '+'; 
+                    break;
+                    case "Subtração": return "-"; 
+                    break;
+                    case "Multiplicação": return 'x'; 
+                    break;
+                    case "Divisão": return '/'; 
+                    break;
+                }
+            }
+</script>
+</body>
+</html>
