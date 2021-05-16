@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<title>Exercício 3</title>
+    <link rel="stylesheet" href="../../css/estilo.css">
+    <h1>Exercício 3</h1>
+    <h2>Verificação de triângulos</h2>
+</head>
+<body>
+    <h2>Insira 3 valores e descubra o tipo de triângulo que eles formam.</h2>
+    <input type="number" id="x1" placeholder="x1">
+    <input type="number" id="x2" placeholder="x2">
+    <input type="number" id="x3" placeholder="x2">
+    <button type="button" id="botao">Executar</button>
+    <p id="result"></p>
+<script>
+     $(function()
+        {
+            $("#botao").click(function(){
+                let x1 = $("#x1").val();
+                let x2 = $("#x2").val();
+                let x3 = $("#x3").val();
+                if(x1<=0 || x2<=0 || x3<=0)
+                    $("#result").text("Erro");
+                else
+                    $("#result").text(verifica(x1,x2,x3));
+                function verifica(x1,x2,x3)
+                    {
+                        x1 = parseFloat(x1);
+                        x2 = parseFloat(x2);
+                        x3 = parseFloat(x3);
+                        if(testa_tripossivel(x1, x2, x3)==true)
+                            return tipo(x1,x2,x3);
+                        else
+                            return "Erro";
+                    }
+                        function modulo (x)
+                            {
+                                if(x<0)
+                                    x=x*(-1);
+                                return x;
+                            }
+                        function testa_tripossivel(x1,x2,x3)
+                        {
+                            if(modulo(x2-x3)<x1 && x1<(x2+x3) || modulo(x1-x3)<x2 && x2<(x1+x3) || modulo(x1-x2)<x3 && x3<(x1+x2))
+                                return true;
+                            else
+                                return false;
+                        }                    
+                        function tipo(x1,x2,x3)
+                        {
+                            if (x1==x2 && x2==x3)
+                                return "Triângulo equilátero";
+                            if(x1==x2 && x2!=x3 || x1==x3 && x1!=x2 || x2==x3 && x2!=x1)
+                                return "Triângulo isósceles";
+                            if(x1!=x2 && x1!=x3 && x2!=x3 )
+                                return "Triângulo escaleno";
+                        }                 
+            })
+        })
+</script>
+</body>
+</html>
