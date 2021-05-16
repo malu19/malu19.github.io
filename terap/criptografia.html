@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<title>Exercício 4</title>
+    <link rel="stylesheet" href="../../css/estilo.css">
+    <h1>Exercício 4</h1>
+    <h2>Criptografia por rotação</h2>
+</head>
+<body>
+    <h2>Para criptografar por rotação uma sequência alfabética, a insira com o número de posições para rotação.</h2>
+    <input type="text" id="seq" placeholder="Sequência">
+    <input type="text" id="rot" placeholder="Número de posições para rotação">
+    <button type="button" id="botao">Executar</button>
+    <p id="result"></p>
+<script>
+     $(function()
+        {
+            $("#botao").click(function(){
+                let seq = $("#seq").val();
+                let rot = $("#rot").val();
+                rot = parseInt(rot);
+                $("#result").text(cripto(seq,rot));
+            })
+                function cripto(seq,rot)
+                    {
+                        let arrayseq=seq.split('');
+                        let arrayletras=["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+                        let lengthseq=arrayseq.length;
+                        let lengthletras=arrayletras.length;
+                        let a=b=0;
+                        let c;
+                        let d;
+                        while(b<lengthseq)
+                        {
+                            d=arrayseq[b];
+                            while(a<lengthletras)
+                            {
+                                if(arrayletras[a] == d)
+                                {
+                                    if((a+rot)>lengthletras)
+                                    {
+                                        c = a+rot-lengthletras;
+                                        arrayseq[b]=arrayletras[c];
+                                    }
+                                    else if((a+rot) == lengthletras)
+                                        arrayseq[b] = arrayletras[0];
+                                    else
+                                        arrayseq[b] = arrayletras[a+rot];
+                                }
+                                a++;
+                            }
+                            a=0;
+                            b++;
+                        }	
+                        let seqalterada= arrayseq.join('');
+                        return seqalterada;
+                    }
+        })
+</script>
+</body>
+</html>
